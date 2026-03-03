@@ -1,5 +1,6 @@
 const prisma = require("../lib/prisma");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const generateToken = require("../utils/generateToken");
 
 jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
