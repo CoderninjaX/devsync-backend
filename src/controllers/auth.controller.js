@@ -3,9 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const generateToken = require("../utils/generateToken");
 
-jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
-  expiresIn: "7d",
-});
+
 // SIGNUP
 exports.signup = async (req, res) => {
   try {
@@ -45,25 +43,28 @@ exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const user = await prisma.user.findUnique({ where: { email } });
+    const user = await prisma.user.findUnique({
+      where: { email },
+    });
 
     if (!user)
-      return res.status(400).json({ message: "Invalid credentials" });
+      return res.status(400).json({ message: "User not found" });
 
-    const isMatch = await bcrypt.compare(password, user.password);
+    const valid = await bcrypt.compare(password, user.password);
 
-    if (!isMatch)
-      return res.status(400).json({ message: "Invalid credentials" });
+    if (!valid)
+      return res.status(400).json({ message: "Invalid password" });
 
-    const token = generateToken(user.id);
+    const token = jwt.sign(
+      { userId: user.id },
+      process.env.JWT_SECRET,
+      { expiresIn: "7d" }
+    );
 
-    res.json({
-      message: "Login success",
-      token,
-      user: { id: user.id, name: user.name, email: user.email },
-    });
+    res.json({ token });
+
   } catch (err) {
-    console.error(err);
     res.status(500).json({ message: "Server error" });
   }
+
 };
