@@ -1,0 +1,61 @@
+# POST http://localhost:5000/api/auth/signup
+# Content-Type: application/json
+
+# {
+#    "name": "UserB",
+#   "email": "UserB@test.com",
+#   "password": "12345"
+# }
+
+# POST http://localhost:5000/api/auth/login
+# Content-Type: application/json
+
+# {
+#   "email": "UserB@test.com",
+#   "password": "12345"
+# }
+# GET http://localhost:5000/api/me
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5NTQ0NzQyNy03OTQyLTQ4N2UtYTJhOS05YTE4NTY4YTc3MDciLCJpYXQiOjE3NzI0NDE0OTMsImV4cCI6MTc3MzA0NjI5M30.h7RMNNzJuG3o37HPJnYHO4A0IuMYcVZ6rY7K8RTUW3s
+
+
+# POST http://localhost:5000/api/workspaces
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwOGZkNTU2My0yZTdmLTQyZjYtODZiYS01YzNhNmE4YjMyYmEiLCJpYXQiOjE3NzIzODQ4ODUsImV4cCI6MTc3Mjk4OTY4NX0.dVD0h05g_ymjVPb-YgnTG8a0xQoj7gkAXEC-Po2P480
+# Content-Type: application/json
+
+# {
+#   "name": "DevSync Project"
+# }
+
+# eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5NTQ0NzQyNy03OTQyLTQ4N2UtYTJhOS05YTE4NTY4YTc3MDciLCJpYXQiOjE3NzIzODY2ODUsImV4cCI6MTc3Mjk5MTQ4NX0.i2Lq_2tSfKbwrO_bILUoUtQb99HM-AKRBd2H1usu2Mw
+
+# POST  http://localhost:5000/api/workspaces/join
+# Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5NTQ0NzQyNy03OTQyLTQ4N2UtYTJhOS05YTE4NTY4YTc3MDciLCJpYXQiOjE3NzI0NDE0OTMsImV4cCI6MTc3MzA0NjI5M30.h7RMNNzJuG3o37HPJnYHO4A0IuMYcVZ6rY7K8RTUW3s
+# Content-Type: application/json
+
+# {
+#   "inviteCode": "5XMZd2Lz"
+# }
+# GET http://localhost:5000/api/workspaces
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5NTQ0NzQyNy03OTQyLTQ4N2UtYTJhOS05YTE4NTY4YTc3MDciLCJpYXQiOjE3NzI0NTIyOTksImV4cCI6MTc3MzA1NzA5OX0.JkS6RTpdnBJjTtYHDFtLlVorGGNpJqqqUCLQZr3CDXU
+# Content-Type: application/json
+
+# 66a21c5c-3691-4296-891a-84b3628989ee
+# POST  http://localhost:5000/api/tasks/66a21c5c-3691-4296-891a-84b3628989ee
+# Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5NTQ0NzQyNy03OTQyLTQ4N2UtYTJhOS05YTE4NTY4YTc3MDciLCJpYXQiOjE3NzI0NTIyOTksImV4cCI6MTc3MzA1NzA5OX0.JkS6RTpdnBJjTtYHDFtLlVorGGNpJqqqUCLQZr3CDXU
+
+# {
+#     "title": "Build login UI",
+#   "description": "React frontend banana"
+# }
+
+GET http://localhost:5000/api/tasks/66a21c5c-3691-4296-891a-84b3628989ee
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5NTQ0NzQyNy03OTQyLTQ4N2UtYTJhOS05YTE4NTY4YTc3MDciLCJpYXQiOjE3NzI0NTIyOTksImV4cCI6MTc3MzA1NzA5OX0.JkS6RTpdnBJjTtYHDFtLlVorGGNpJqqqUCLQZr3CDXU
+###
+PATCH http://localhost:5000/api/tasks/f1d8b1fb-68b4-4a75-8050-4fd47bd5c2ec/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5NTQ0NzQyNy03OTQyLTQ4N2UtYTJhOS05YTE4NTY4YTc3MDciLCJpYXQiOjE3NzI0NTIyOTksImV4cCI6MTc3MzA1NzA5OX0.JkS6RTpdnBJjTtYHDFtLlVorGGNpJqqqUCLQZr3CDXU
+Content-Type: application/json
+
+{
+    "status": "inprogress"
+}
