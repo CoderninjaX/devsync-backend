@@ -20,8 +20,11 @@ app.use("/api/auth", authRoutes);
 app.use("/api/workspaces", workspaceRoutes);
 app.use("/api/tasks", taskRoutes);
 
-app.listen(5000, () => console.log("Server running on port 5000"));
-console.log("Workspace routes loaded:", workspaceRoutes);
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () =>
+  console.log(`Server running on port ${PORT}`)
+);
 
 // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIwOGZkNTU2My0yZTdmLTQyZjYtODZiYS01YzNhNmE4YjMyYmEiLCJpYXQiOjE3NzIzODQ4ODUsImV4cCI6MTc3Mjk4OTY4NX0.dVD0h05g_ymjVPb-YgnTG8a0xQoj7gkAXEC-Po2P480
 

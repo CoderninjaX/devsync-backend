@@ -2,6 +2,9 @@ const prisma = require("../lib/prisma");
 const bcrypt = require("bcrypt");
 const generateToken = require("../utils/generateToken");
 
+jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
+  expiresIn: "7d",
+});
 // SIGNUP
 exports.signup = async (req, res) => {
   try {
