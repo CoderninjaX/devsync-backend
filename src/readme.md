@@ -2,8 +2,8 @@
 
 A production-ready full-stack SaaS application that enables teams to collaborate using workspaces and a drag-and-drop Kanban board.
 
-🔗 **Live Demo:** https://your-frontend.vercel.app  
-🛠 Backend API: https://your-backend.onrender.com  
+🔗 **Live Demo:** https://devsync-backendd.vercel.app
+🛠 Backend API: https://devsync-backend-3lhb.onrender.com 
 
 ---
 
